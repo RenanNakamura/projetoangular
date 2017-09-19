@@ -1,5 +1,6 @@
 import { AutenticacaoGuardGuard } from './autenticacao-guard.guard';
 import { ClientesComponent } from './clientes/clientes.component';
+import { FormapagamentoComponent } from './formapagamento/formapagamento.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
@@ -9,7 +10,8 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate:[AutenticacaoGuardGuard] },
-  { path: 'clientes', component: ClientesComponent },
+  { path: 'clientes', component: ClientesComponent, canActivate:[AutenticacaoGuardGuard] },
+  { path: 'formapagamento', component: FormapagamentoComponent, canActivate:[AutenticacaoGuardGuard] },  
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 

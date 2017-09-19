@@ -32,6 +32,7 @@ export class ClientesComponent implements OnInit {
   }
 
   save(cliente) {
+    console.log('cliente->',cliente);
     if (cliente.id) {
       this.clientesService.updateCliente(cliente)
         .then(() => this.reload());
@@ -42,9 +43,12 @@ export class ClientesComponent implements OnInit {
     this.clear();
   }
 
-  private reload() {
+  private reload() {    
     return this.clientesService.getClientes()
-      .then(clientes => this.clientes = clientes);
+      .then(clientes => {
+        console.log('clientes->', clientes);
+        this.clientes = clientes
+      });
   }
 
 }

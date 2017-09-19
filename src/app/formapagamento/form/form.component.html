@@ -1,20 +1,15 @@
 <p-panel>
     <p-header>
-        Cadastro de cliente
+        Cadastro de forma de pagamento
       </p-header>      
   <div>
       <div class="ui-g ui-fluid">
           <div class="ui-g-12 ui-md-4">
             <div class="ui-inputgroup">
-              <input type="text" [(ngModel)]="cliente.nome" placeholder="Nome" pInputText>
+              <input type="text" [(ngModel)]="formaPagamento.descricao" placeholder="Descrição..." pInputText>
             </div>
           </div>
-          <div class="ui-g-12 ui-md-4">
-            <div class="ui-inputgroup">
-              <input type="text" [(ngModel)]="cliente.telefone" placeholder="Telefone" pInputText>
-            </div>
-          </div>
-        </div>          
+      </div>          
     <button pButton type="button" label="Salvar" (click)="onSave()"></button>        
     <button pButton type="button" label="Limpar" (click)="onClear()"></button>        
   </div>

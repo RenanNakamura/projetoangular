@@ -1,0 +1,20 @@
+<p-panel>
+    <p-header>
+        Listagem de forma de pagamentos
+    </p-header>
+    <table class="table table-striped">
+        <tr>
+            <th>Descrição</th>  
+            <th>Ações</th>  
+        </tr>  
+        <tr *ngFor="let formaPagamento of formaPagamentos">
+            <td>
+                <a>{{formaPagamento.descricao}}</a>
+            </td>
+            <td>
+                <button class="ui-button-warning ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" label="Editar" pbutton="" type="button" (click)="onEdit(formaPagamento)"><span class="ui-button-text ui-clickable">Editar</span></button>
+                <button class="ui-button-danger ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" label="Remover" pbutton="" type="button" (click)="onRemove(formaPagamento)"><span class="ui-button-text ui-clickable">Remover</span></button>
+            </td>
+        </tr>
+    </table>
+</p-panel>

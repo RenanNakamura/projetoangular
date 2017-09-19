@@ -1,5 +1,6 @@
 import { AutenticacaoGuardGuard } from './autenticacao-guard.guard';
 import { ClientesModule } from './clientes/clientes.module';
+import { FormapagamentoModule } from './formapagamento/formapagamento.module';
 import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
@@ -27,6 +28,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     LoginModule,
     HomeModule,
     ClientesModule,
+    FormapagamentoModule,
     AppRoutingModule
   ],
   providers: [AutenticacaoGuardGuard],

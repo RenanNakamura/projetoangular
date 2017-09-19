@@ -1,41 +1,41 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
+
 @Injectable()
-export class ClientesService {
+export class FormapagamentoService {
 
   errorHandler = error => console.error('ContatoService error', error);
   private baseUrl = 'https://projetoangular-77d1d.firebaseio.com/';
-  private collection = 'clientes';
+  private collection = 'formapagamento';
 
   constructor(private http: Http) { }
 
-  addCliente(cliente) {
-    const json = JSON.stringify(cliente);
+  addFormaPagamento(formapagamento) {
+    const json = JSON.stringify(formapagamento);
     return this.http.post(`${this.baseUrl}/${this.collection}.json`, json)
       .toPromise()
       .catch(this.errorHandler);
   }
 
-  getClientes() {
+  getFormaPagamento() {
     return this.http.get(`${this.baseUrl}/${this.collection}.json`)
       .toPromise()
       .then(response => this.convert(response.json()))
       .catch(this.errorHandler);
   }
 
-  removeCliente(cliente) {
-    return this.http.delete(`${this.baseUrl}/${this.collection}/${cliente.id}.json`)
+  removeFormaPagamento(formapagamento) {
+    return this.http.delete(`${this.baseUrl}/${this.collection}/${formapagamento.id}.json`)
       .toPromise()
       .catch(this.errorHandler);
   }
 
-  updateCliente(cliente) {
+  updateFormaPagamento(formapagamento) {
     const json = JSON.stringify({
-      nome: cliente.nome,
-      telefone: cliente.telefone
+      descricao: formapagamento.descricao,
     });
-    return this.http.patch(`${this.baseUrl}/${this.collection}/${cliente.id}.json`, json)
+    return this.http.patch(`${this.baseUrl}/${this.collection}/${formapagamento.id}.json`, json)
       .toPromise()
       .catch(this.errorHandler);
   }
@@ -44,9 +44,10 @@ export class ClientesService {
     return Object.keys(parsedResponse)
       .map(id => ({
         id: id,
-        nome: parsedResponse[id].nome,
-        telefone: parsedResponse[id].telefone
-      }));    
+        descricao: parsedResponse[id].descricao
+      }))
+      .sort((a, b) => a.descricao.localeCompare(b.descricao));
   }
+
 
 }

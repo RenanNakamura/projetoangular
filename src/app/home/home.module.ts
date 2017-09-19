@@ -1,4 +1,5 @@
 import { ClientesModule } from './../clientes/clientes.module';
+import { FormapagamentoModule } from './../formapagamento/formapagamento.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -16,6 +17,7 @@ import {AccordionModule, PanelModule, ButtonModule, InputTextModule, PanelMenuMo
     ButtonModule,
     InputTextModule,            
     ClientesModule,
+    FormapagamentoModule,
     HomeRoutingModule
   ],
   declarations: [HomeComponent]
