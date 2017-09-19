@@ -1,0 +1,26 @@
+<p-panel>
+    <p-header>
+        Listagem de clientes
+    </p-header>
+    <table class="table table-striped">
+        <tr>
+            <th>Nome</th>  
+            <th>Sobrenome</th>  
+            <th>Ações</th>  
+        </tr>  
+        <tr *ngFor="let cliente of listClientes">
+            <td>
+                <a>{{cliente.nome}}</a>
+            </td>
+            <td>
+                <a>{{cliente.telefone}}</a>
+            </td>            <td>
+                <button class="ui-button-warning ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" label="Editar" pbutton="" type="button" (click)="onEdit(cliente)"><span class="ui-button-text ui-clickable">Editar</span></button>
+                <button class="ui-button-danger ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" label="Remover" pbutton="" type="button" (click)="onRemove(cliente)"><span class="ui-button-text ui-clickable">Remover</span></button>
+            </td>
+        </tr>
+    </table>
+    <p-footer>
+        <button pButton type="button" label="Cadastrar novo" (click)="cadastrarNovo()"></button>
+    </p-footer>
+</p-panel>

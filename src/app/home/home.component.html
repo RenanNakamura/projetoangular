@@ -1,0 +1,13 @@
+<p-panel>
+  <p-header>
+    Menu
+  </p-header>
+  <div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-2" *ngFor="let item of items">
+        <button pButton type="button" label="{{item.name}}" (click)="irPara(item)"></button>
+    </div>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>  
+</p-panel>
