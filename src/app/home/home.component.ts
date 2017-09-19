@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  items = [{name: "Clientes", url: "clientes"}, {name: "Forma de pagamentos", url: "formapagamento"}];
+  items = [{name: "Clientes", url: "home/clientes"}, {name: "Forma pagamentos", url: "home/formapagamento"}];
   constructor(private router:Router) {}
 
   ngOnInit() {
